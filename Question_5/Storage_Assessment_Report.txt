@@ -1,1 +1,23 @@
+Storage Assessment Report
+=========================
 
+1. Available Storage Devices
+The available storage devices were identified using the lsblk command. The system detected the primary storage device and its partitions successfully.
+
+2. Mounted File Systems
+The mounted file systems were verified using the df -h command. The root filesystem and WSL virtual file systems are mounted correctly.
+
+3. Disk Usage Statistics
+The df -h command showed that the primary filesystem has sufficient free space. Current disk usage is low, making the system suitable for deploying a new application server.
+
+4. Inode Utilization
+The df -i command showed approximately 1% inode usage, with a large number of free inodes available for creating additional files.
+
+5. Storage Health Observations
+The storage resources are healthy. Disk usage is low, inode utilization is minimal, and all required file systems are mounted and accessible.
+
+6. Recommendations
+- Monitor disk usage regularly.
+- Remove unnecessary files and logs.
+- Perform routine storage health checks.
+- Maintain backups of important data.
