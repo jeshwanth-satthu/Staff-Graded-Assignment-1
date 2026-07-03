@@ -1,0 +1,233 @@
+======================================================================
+                     PROJECT WORKSPACE REPORT
+======================================================================
+
+Course Name : Command Line Interfaces and Scripting
+Assignment  : Staff Graded Assignment 1
+Question    : Project Workspace Configuration
+
+Student Name : Jeshwanth Sai Satthu
+Date         : 03-07-2026
+
+======================================================================
+OBJECTIVE
+======================================================================
+
+The objective of this task was to create a secure Linux workspace for a
+project team. The workspace was organized into separate directories for
+documentation, source code, and log files. Appropriate Linux file
+permissions were configured to ensure that project data remains secure
+while allowing authorized users to access the required resources.
+
+======================================================================
+1. DIRECTORY STRUCTURE CREATED
+======================================================================
+
+Commands Used:
+
+mkdir -p secure_workspace/{docs,src,logs}
+
+touch secure_workspace/docs/plan.txt
+touch secure_workspace/src/app.txt
+touch secure_workspace/logs/activity.log
+
+Directory Structure:
+
+secure_workspace
+│
+├── docs
+│     └── plan.txt
+│
+├── src
+│     └── app.txt
+│
+└── logs
+      └── activity.log
+
+Explanation:
+
+A secure project workspace named "secure_workspace" was created.
+Three subdirectories were created to organize project resources:
+
+• docs  – Stores project documentation.
+• src   – Stores application source code.
+• logs  – Stores activity and system log files.
+
+Each directory contains a sample file to represent project data.
+
+======================================================================
+2. FILE PERMISSIONS BEFORE MODIFICATION
+======================================================================
+
+Command Used:
+
+ls -ld secure_workspace secure_workspace/*
+
+Result:
+
+drwxr-xr-x secure_workspace
+drwxr-xr-x docs
+drwxr-xr-x src
+drwxr-xr-x logs
+
+Explanation:
+
+Immediately after creation, the directories were assigned the default
+Linux permissions.
+
+Permission Meaning:
+
+Owner : Read, Write and Execute
+Group : Read and Execute
+Others: Read and Execute
+
+These permissions allow every user on the system to view the directory,
+which is not suitable for storing sensitive project information.
+
+======================================================================
+3. FILE PERMISSIONS AFTER MODIFICATION
+======================================================================
+
+Commands Used:
+
+chmod 750 secure_workspace
+chmod 750 secure_workspace/docs
+chmod 750 secure_workspace/src
+chmod 750 secure_workspace/logs
+
+chmod 640 secure_workspace/docs/plan.txt
+chmod 640 secure_workspace/src/app.txt
+chmod 640 secure_workspace/logs/activity.log
+
+Verification Commands:
+
+ls -ld secure_workspace secure_workspace/*
+ls -l secure_workspace/*
+
+Result:
+
+Directory Permissions:
+
+drwxr-x--- secure_workspace
+drwxr-x--- docs
+drwxr-x--- src
+drwxr-x--- logs
+
+File Permissions:
+
+-rw-r----- plan.txt
+-rw-r----- app.txt
+-rw-r----- activity.log
+
+Explanation:
+
+The permissions were modified to improve the security of the workspace.
+
+Directory Permission (750):
+
+Owner : Read, Write and Execute
+Group : Read and Execute
+Others: No Permission
+
+File Permission (640):
+
+Owner : Read and Write
+Group : Read Only
+Others: No Permission
+
+These permissions ensure that only authorized users can access or
+modify the project files while preventing unauthorized users from
+viewing confidential project information.
+
+======================================================================
+4. OWNERSHIP DETAILS
+======================================================================
+
+Command Used:
+
+ls -ld secure_workspace
+
+Result:
+
+Owner : jeshw
+Group : jeshw
+
+Explanation:
+
+The ownership details indicate that the current logged-in user
+(jeshw) owns the workspace and all its contents.
+
+The owner has full control over the directories and files, including
+the ability to modify permissions, edit files, and manage project
+resources.
+
+Proper ownership is an important part of Linux security because it
+determines who is allowed to manage project data.
+
+======================================================================
+5. UMASK VALUE USED
+======================================================================
+
+Command Used:
+
+umask
+
+Result:
+
+0022
+
+Explanation:
+
+The umask value defines the default permissions assigned to newly
+created files and directories.
+
+A umask value of 0022 removes write permission for the Group and
+Others while keeping full permissions for the Owner.
+
+Default permissions created by this umask are:
+
+Directories : 755
+Files       : 644
+
+Additional permission changes using the chmod command were required
+to make the project workspace more secure.
+
+======================================================================
+6. HOW LINUX PERMISSIONS PROTECT PROJECT DATA
+======================================================================
+
+Linux permissions provide an effective mechanism for controlling access
+to files and directories.
+
+In this project:
+
+• The Owner has complete control over the workspace.
+• Group members can access project directories and read project files.
+• Other users have no permissions to access the workspace.
+
+This permission model protects the project from unauthorized access,
+accidental modification, or deletion of important files.
+
+Using permission values such as 750 for directories and 640 for files
+maintains confidentiality while still allowing controlled collaboration
+among authorized team members.
+
+======================================================================
+CONCLUSION
+======================================================================
+
+A secure project workspace was successfully created using Linux
+commands. The directory hierarchy was organized into separate folders
+for documentation, source code, and log files.
+
+Ownership and default permissions were verified successfully. The
+workspace permissions were modified to strengthen security by allowing
+only the owner and authorized group members to access project data.
+
+The configured permission model provides a secure environment for
+storing project files while protecting sensitive information from
+unauthorized users.
+
+======================================================================
+END OF REPORT
+======================================================================
