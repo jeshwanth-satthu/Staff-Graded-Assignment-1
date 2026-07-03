@@ -1,1 +1,71 @@
+=========================================================
+         FILE ACCESS AND I/O INVESTIGATION REPORT
+=========================================================
 
+Course      : Command Line Interfaces and Scripting
+Assignment  : Staff Graded Assignment 1
+Question    : File Access and I/O Investigation
+
+Student Name: Jeshwanth Sai Satthu
+
+---------------------------------------------------------
+1. Open Files
+---------------------------------------------------------
+
+Command:
+lsof
+
+Observation:
+The lsof command displayed the list of open files and the processes using them.
+
+---------------------------------------------------------
+2. File Descriptors
+---------------------------------------------------------
+
+Command:
+ls -l /proc/$$/fd
+
+Observation:
+The command displayed the current shell's file descriptors. Standard input (0), standard output (1), standard error (2), and descriptor 3 for app.log were visible.
+
+---------------------------------------------------------
+3. Output and Error Redirection
+---------------------------------------------------------
+
+Output Redirection:
+ls -l > stdout.txt
+
+Result:
+The command output was stored in stdout.txt.
+
+Error Redirection:
+ls /not_a_real_path 2> stderr.txt
+
+Result:
+The error message was redirected to stderr.txt.
+
+Combined Redirection:
+(ls -l && ls /not_a_real_path) > combined.txt 2>&1
+
+Result:
+Both standard output and error output were saved in one file.
+
+---------------------------------------------------------
+4. Resource Limits
+---------------------------------------------------------
+
+Command:
+ulimit -a
+
+Observation:
+The command displayed system resource limits such as open files, stack size, CPU time, and memory limits.
+
+---------------------------------------------------------
+5. Conclusion
+---------------------------------------------------------
+
+Linux manages file I/O through file descriptors. File descriptor 0 is standard input, 1 is standard output, and 2 is standard error. Redirection allows output and errors to be stored in files, making debugging and logging easier.
+
+=========================================================
+END OF REPORT
+=========================================================
