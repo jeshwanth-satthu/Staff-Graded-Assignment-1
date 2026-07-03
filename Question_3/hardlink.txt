@@ -1,1 +1,1 @@
-Linux link test file
+This is the original file.
