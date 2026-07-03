@@ -1,1 +1,184 @@
+==============================================================
+                 ENVIRONMENT REPORT
+==============================================================
 
+Course      : Command Line Interfaces and Scripting
+Assignment  : Staff Graded Assignment 1
+Question    : Linux Environment Verification
+
+Student Name: Jeshwanth Sai Satthu
+BITS ID     : 2025EB01936
+
+==============================================================
+1. USER IDENTITY VERIFICATION
+==============================================================
+
+Objective:
+Verify the current logged-in user and the groups associated with the account.
+
+Command Used:
+
+id
+
+Result Obtained:
+
+uid=1000(jeshw) gid=1000(jeshw)
+groups=1000(jeshw),4(adm),24(cdrom),27(sudo),
+30(dip),46(plugdev),100(users)
+
+Explanation:
+
+The 'id' command displays detailed information about the current user.
+It shows the User ID (UID), Group ID (GID), and all groups that the user
+belongs to.
+
+The output confirms that:
+
+• Username        : jeshw
+• User ID (UID)   : 1000
+• Group ID (GID)  : 1000
+• User Groups     : adm, cdrom, sudo, dip, plugdev and users
+
+The presence of the 'sudo' group indicates that the user has
+administrator privileges required for system administration tasks.
+
+==============================================================
+2. CURRENT SHELL VERIFICATION
+==============================================================
+
+Objective:
+Verify the default shell currently used by the user.
+
+Command Used:
+
+echo $SHELL
+
+Result Obtained:
+
+/bin/bash
+
+Explanation:
+
+The 'echo $SHELL' command displays the default command-line shell
+assigned to the current user.
+
+The output '/bin/bash' indicates that the Bash shell is active.
+
+Bash (Bourne Again Shell) is one of the most commonly used Linux
+shells. It allows users to execute Linux commands, automate tasks
+through shell scripts, and manage the operating system efficiently.
+
+==============================================================
+3. CURRENT WORKING DIRECTORY
+==============================================================
+
+Objective:
+Determine the current location of the user in the Linux file system.
+
+Command Used:
+
+pwd
+
+Result Obtained:
+
+/home/jeshw/CLI-Graded-Assignment/Q1
+
+Explanation:
+
+The 'pwd' (Print Working Directory) command displays the complete path
+of the current directory.
+
+The output confirms that the user is currently working inside the
+'CLI-Graded-Assignment/Q1' directory, where all files related to
+Question 1 are stored.
+
+This ensures that every file created during the assignment is organized
+inside the correct project folder.
+
+==============================================================
+4. FILES AND DIRECTORIES IN THE WORKSPACE
+==============================================================
+
+Objective:
+Display all files and directories present in the current workspace.
+
+Command Used:
+
+ls -la
+
+Result Obtained:
+
+total 8
+drwxr-xr-x 2 jeshw jeshw 4096 Jul 3 10:19 .
+drwxr-xr-x 3 jeshw jeshw 4096 Jul 3 10:19 ..
+
+Explanation:
+
+The 'ls -la' command lists every file and directory in the current
+location, including hidden files.
+
+The command also displays detailed information such as:
+
+• File permissions
+• Owner name
+• Group name
+• File size
+• Date and time of modification
+
+At the time of execution, the Q1 directory contained only the current
+directory (.) and parent directory (..), indicating that it was newly
+created and no additional files had been added yet.
+
+==============================================================
+5. NETWORK CONNECTIVITY VERIFICATION
+==============================================================
+
+Objective:
+Verify whether the Linux system is connected to the Internet.
+
+Command Used:
+
+ping -c 4 google.com
+
+Result Obtained:
+
+PING google.com (...)
+4 packets transmitted,
+4 packets received,
+0% packet loss
+
+Explanation:
+
+The 'ping' command sends Internet Control Message Protocol (ICMP)
+packets to a remote server to test network connectivity.
+
+The output shows:
+
+• Packets Sent      : 4
+• Packets Received  : 4
+• Packet Loss       : 0%
+
+Since all four packets were successfully received with no packet loss,
+the Linux system has a stable and active Internet connection.
+
+==============================================================
+CONCLUSION
+==============================================================
+
+The Linux environment verification was completed successfully.
+
+The following were verified:
+
+✓ User identity and associated groups
+✓ Current Bash shell
+✓ Current working directory
+✓ Workspace contents
+✓ Internet connectivity
+
+The successful execution of all commands confirms that the Linux
+environment is correctly configured and ready for command-line
+operations and scripting tasks.
+
+==============================================================
+END OF REPORT
+==============================================================
