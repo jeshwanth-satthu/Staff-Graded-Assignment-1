@@ -1,1 +1,75 @@
+=========================================================
+               LINK ANALYSIS REPORT
+=========================================================
 
+Course      : Command Line Interfaces and Scripting
+Assignment  : Staff Graded Assignment 1
+Question    : Linux File Links
+
+Student Name: Jeshwanth Sai Satthu
+
+
+=========================================================
+1. Inode Numbers
+=========================================================
+
+Command:
+
+ls -li
+
+Observation:
+
+The original file and the hard link shared the same inode number,
+while the symbolic link had a different inode number.
+
+=========================================================
+2. Hard Link vs Symbolic Link
+=========================================================
+
+Hard Link:
+• Shares the same inode as the original file.
+• Continues to work even after the original file is deleted.
+
+Symbolic Link:
+• Has a different inode number.
+• Becomes invalid when the original file is deleted.
+
+=========================================================
+3. Effect of Deleting the Original File
+=========================================================
+
+Command:
+
+rm original.txt
+
+Result:
+
+The hard link remained accessible and displayed the file contents.
+The symbolic link became broken and returned an error because the
+target file no longer existed.
+
+=========================================================
+4. Metadata
+=========================================================
+
+Command:
+
+stat original.txt hardlink.txt symlink.txt
+
+Observation:
+
+The metadata displayed inode numbers, file type, permissions,
+ownership, file size, and timestamps for all three files.
+
+=========================================================
+5. Conclusion
+=========================================================
+
+The experiment showed that hard links share the same inode and
+remain functional after deleting the original file. Symbolic links
+store only the file path and become broken when the original file
+is removed.
+
+=========================================================
+END OF REPORT
+=========================================================
